@@ -1,5 +1,8 @@
 # Инструмент анализа рейтинга брендов
 
+[![CI](https://github.com/Iliya-Vilkov/rating_analysis/actions/workflows/test.yml/badge.svg)](https://github.com/Iliya-Vilkov/rating_analysis/actions/workflows/test.yml)
+
+
 Инструмент на Python для анализа рейтингов продуктов из CSV файлов и генерации отчетов.
 
 ## Быстрая настройка и запуск
@@ -83,4 +86,21 @@ python -m src.main --files examples/data.csv --report average-rating
 
 ![Тесты и покрытие кода](examples/screenshots/coverage_screenshot.png)
 
+## Запуск через Docker (опционально)
+
+Вы можете запустить приложение в контейнере Docker.
+
+### Сборка образа:
+```bash
+docker build -t rating-analysis .
+
+### Команда:
+```bash
+docker run --rm rating-analysis --files examples/data.csv --report average-rating
+
+## Пример работы
+
+### Результат запуска тестов с покрытием
+
+![Тесты и покрытие кода](examples/screenshots/coverage_screenshot_Docker.png)
 
