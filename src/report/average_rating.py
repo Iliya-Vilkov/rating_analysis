@@ -28,5 +28,6 @@ class AverageRatingReport(BaseReport):
         formatted_data.sort(key=lambda x: float(x[1]), reverse=True)
 
         headers = ["Brand", "Average Rating"]
-        return tabulate(formatted_data, headers=headers, tablefmt="simple",
-                        disable_numparse=True)
+        return tabulate(
+            formatted_data, headers=headers, tablefmt="simple", disable_numparse=True
+        )

@@ -17,8 +17,7 @@ def test_run_success(mock_get_report_class, mock_read_files, capsys):
 
     mock_report_instance = Mock()
     mock_report_instance.generate.return_value = (
-        "Brand      Average Rating\n"
-        "BrandA                4.5"
+        "Brand      Average Rating\n" "BrandA                4.5"
     )
 
     mock_report_class = Mock()
@@ -53,9 +52,7 @@ def test_run_file_not_found(mock_read_files, capsys):
 
 @patch("src.main.read_csv_files")
 @patch("src.main.get_report_class")
-def test_run_unsupported_report(mock_get_report_class,
-                                mock_read_files,
-                                capsys):
+def test_run_unsupported_report(mock_get_report_class, mock_read_files, capsys):
     """
     Тест проверяет обработку запроса на несуществующий тип отчёта.
     Ожидается:
@@ -63,8 +60,7 @@ def test_run_unsupported_report(mock_get_report_class,
     - Сообщение об ошибке в выводе
     """
     mock_read_files.return_value = []
-    mock_get_report_class.side_effect = ValueError("Неподдерживаемый тип "
-                                                   "отчета")
+    mock_get_report_class.side_effect = ValueError("Неподдерживаемый тип " "отчета")
 
     exit_code = run(files=["data.csv"], report_name="unknown")
 

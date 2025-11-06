@@ -33,12 +33,10 @@ def read_csv_files(file_paths: List[str]) -> List[Record]:
                         name=row["name"],
                         brand=row["brand"],
                         price=float(row["price"]),
-                        rating=float(row["rating"])
+                        rating=float(row["rating"]),
                     )
                     records.append(record)
             except (KeyError, ValueError) as e:
-                raise ValueError(
-                    f"Неверный формат CSV в файле {file_path}: {str(e)}"
-                )
+                raise ValueError(f"Неверный формат CSV в файле {file_path}: {str(e)}")
 
     return records

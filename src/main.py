@@ -53,13 +53,9 @@ def main():
         "--files",
         nargs="+",
         required=True,
-        help="Пути к CSV файлам с данными о рейтингах"
+        help="Пути к CSV файлам с данными о рейтингах",
     )
-    parser.add_argument(
-        "--report",
-        required=True,
-        help="Тип отчета для генерации"
-    )
+    parser.add_argument("--report", required=True, help="Тип отчета для генерации")
     args = parser.parse_args()
     sys.exit(run(args.files, args.report))
 
