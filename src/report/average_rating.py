@@ -29,5 +29,8 @@ class AverageRatingReport(BaseReport):
 
         headers = ["Brand", "Average Rating"]
         return tabulate(
-            formatted_data, headers=headers, tablefmt="simple", disable_numparse=True
+            formatted_data,
+            headers=headers,
+            tablefmt="simple",
+            disable_numparse=True,
         )

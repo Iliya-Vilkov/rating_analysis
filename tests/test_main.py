@@ -61,7 +61,7 @@ def test_run_unsupported_report(mock_get_report_class, mock_read_files, capsys):
     - Сообщение об ошибке в выводе
     """
     mock_read_files.return_value = []
-    mock_get_report_class.side_effect = ValueError("Неподдерживаемый тип " "отчета")
+    mock_get_report_class.side_effect = ValueError("Неподдерживаемый тип отчета")
 
     exit_code = run(files=["data.csv"], report_name="unknown")
 

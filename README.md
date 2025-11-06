@@ -10,8 +10,8 @@
 Для автоматической установки зависимостей и проверки работоспособности используйте скрипт:
 
 ```bash
-./setup.sh
-
+./setup_and_test.sh
+```
 
 ## Установка
 
@@ -69,6 +69,7 @@ redmi note 12,xiaomi,199,4.6
 
 - Форматирование кода: `black .`
 - Сортировка импортов: `isort .`
+- Проверка стиля кода: `flake8`
 - Запуск тестов: `pytest`
 - Проверка покрытия: `pytest --cov`
 
@@ -79,28 +80,28 @@ redmi note 12,xiaomi,199,4.6
 ### Команда:
 ```bash
 python -m src.main --files examples/data.csv --report average-rating
+```
 
-## Пример работы
+### Результат:
+![Пример работы](examples/screenshots/example_run.png)
 
-### Результат запуска тестов с покрытием
-
+### Тесты и покрытие кода:
 ![Тесты и покрытие кода](examples/screenshots/coverage_screenshot.png)
 
-## Запуск через Docker (опционально)
+## Запуск через Docker
 
 Вы можете запустить приложение в контейнере Docker.
 
 ### Сборка образа:
 ```bash
 docker build -t rating-analysis .
+```
 
-### Команда:
+### Запуск:
 ```bash
 docker run --rm rating-analysis --files examples/data.csv --report average-rating
+```
 
-## Пример работы
-
-### Результат запуска тестов с покрытием
-
-![Тесты и покрытие кода](examples/screenshots/coverage_screenshot_Docker.png)
+### Результат:
+![Пример работы через Docker](examples/screenshots/example_run_Docker.png)
 
