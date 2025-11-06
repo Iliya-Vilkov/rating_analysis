@@ -37,6 +37,8 @@ def read_csv_files(file_paths: List[str]) -> List[Record]:
                     )
                     records.append(record)
             except (KeyError, ValueError) as e:
-                raise ValueError(f"Invalid CSV format in {file_path}: {str(e)}")
+                raise ValueError(
+                    f"Неверный формат CSV в файле {file_path}: {str(e)}"
+                )
 
     return records
