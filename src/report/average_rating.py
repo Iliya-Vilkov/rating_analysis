@@ -27,10 +27,16 @@ class AverageRatingReport(BaseReport):
         ]
         formatted_data.sort(key=lambda x: float(x[1]), reverse=True)
 
-        headers = ["Brand", "Average Rating"]
+        # Добавляем нумерацию
+        numbered_data = [
+            (idx + 1, brand, rating)
+            for idx, (brand, rating) in enumerate(formatted_data)
+        ]
+
+        headers = ["#", "Brand", "Average Rating"]
         return tabulate(
-            formatted_data,
+            numbered_data,
             headers=headers,
-            tablefmt="simple",
+            tablefmt="grid",
             disable_numparse=True,
         )
