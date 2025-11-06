@@ -2,9 +2,9 @@ import argparse
 import sys
 from typing import List, Type
 
-from src.report.average_rating import AverageRatingReport
-from src.report.base import BaseReport
-from src.utils.file_reader import read_csv_files
+from rating_analysis.report.average_rating import AverageRatingReport
+from rating_analysis.report.base import BaseReport
+from rating_analysis.utils.file_reader import read_csv_files
 
 
 def get_report_class(report_name: str) -> Type[BaseReport]:

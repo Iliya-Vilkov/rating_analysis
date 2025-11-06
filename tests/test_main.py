@@ -1,10 +1,10 @@
 from unittest.mock import Mock, patch
 
-from src.main import run
+from rating_analysis.main import run
 
 
-@patch("src.main.read_csv_files")
-@patch("src.main.get_report_class")
+@patch("rating_analysis.main.read_csv_files")
+@patch("rating_analysis.main.get_report_class")
 def test_run_success(mock_get_report_class, mock_read_files, capsys):
     """
     Тест проверяет успешную генерацию отчёта.
@@ -34,7 +34,7 @@ def test_run_success(mock_get_report_class, mock_read_files, capsys):
     assert "4.5" in captured.out
 
 
-@patch("src.main.read_csv_files")
+@patch("rating_analysis.main.read_csv_files")
 def test_run_file_not_found(mock_read_files, capsys):
     """
     Тест проверяет обработку ситуации, когда файл не найден.
@@ -51,8 +51,8 @@ def test_run_file_not_found(mock_read_files, capsys):
     assert "Error: data.csv" in captured.out
 
 
-@patch("src.main.read_csv_files")
-@patch("src.main.get_report_class")
+@patch("rating_analysis.main.read_csv_files")
+@patch("rating_analysis.main.get_report_class")
 def test_run_unsupported_report(mock_get_report_class, mock_read_files, capsys):
     """
     Тест проверяет обработку запроса на несуществующий тип отчёта.

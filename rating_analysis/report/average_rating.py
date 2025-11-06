@@ -3,8 +3,8 @@ from typing import List
 
 from tabulate import tabulate
 
-from src.report.base import BaseReport
-from src.utils.models import Record
+from rating_analysis.report.base import BaseReport
+from rating_analysis.utils.models import Record
 
 
 class AverageRatingReport(BaseReport):

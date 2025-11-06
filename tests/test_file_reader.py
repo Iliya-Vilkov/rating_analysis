@@ -1,7 +1,7 @@
 import pytest
 
-from src.utils.file_reader import read_csv_files
-from src.utils.models import Record
+from rating_analysis.utils.file_reader import read_csv_files
+from rating_analysis.utils.models import Record
 
 
 def test_read_csv_files_reads_valid_file(tmp_path):

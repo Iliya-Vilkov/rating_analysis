@@ -49,7 +49,7 @@
 
 ### Базовое использование:
 ```bash
-python -m src.main --files data1.csv data2.csv --report average-rating
+python -m rating_analysis.main --files data1.csv data2.csv --report average-rating
 ```
 
 ### Формат CSV файла
@@ -91,7 +91,7 @@ redmi note 12,xiaomi,199,4.6
 
 ### Команда:
 ```bash
-python -m src.main --files examples/data.csv --report average-rating
+python -m rating_analysis.main --files examples/data.csv --report average-rating
 ```
 
 ### Результат:

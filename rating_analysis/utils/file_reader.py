@@ -2,7 +2,7 @@ import csv
 from pathlib import Path
 from typing import List
 
-from src.utils.models import Record
+from rating_analysis.utils.models import Record
 
 
 def read_csv_files(file_paths: List[str]) -> List[Record]:

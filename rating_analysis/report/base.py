@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from src.utils.models import Record
+from rating_analysis.utils.models import Record
 
 
 class BaseReport(ABC):
