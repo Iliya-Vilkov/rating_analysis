@@ -1,4 +1,5 @@
 import pytest
+
 from src.report.average_rating import AverageRatingReport
 from src.utils.models import Record
 
