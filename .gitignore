@@ -22,3 +22,8 @@ htmlcov/
 
 # Другое
 .DS_Store
+
+# Markdown файлы (кроме README.md)
+*.md
+!README.md
+
