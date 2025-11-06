@@ -37,6 +37,8 @@ htmlcov/
 
 # Project specific
 DEVELOPMENT.md
+project.md
+exam.md
 
 # Logs
 *.log

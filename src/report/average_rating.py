@@ -11,29 +11,28 @@ class AverageRatingReport(BaseReport):
     """Отчет, показывающий средний рейтинг по брендам."""
 
     def generate(self, data: List[Record]) -> str:
-        """Генерация отчета со средними рейтингами по брендам.
-
-        Аргументы:
-            data: Список объектов Record для анализа
-
-        Возвращает:
-            str: Отформатированная строка отчета со средними рейтингами брендов
-        """
+        """Генерация отчета со средними рейтингами по брендам."""
         if not data:
             return "Нет данных"
 
-        # Calculate average ratings
+        # Сбор данных по брендам
         brand_ratings = defaultdict(list)
         for record in data:
             brand_ratings[record.brand].append(record.rating)
 
-        # Calculate averages and sort
+        # Расчёт средних (как числа для сортировки)
         report_data = [
             (brand, sum(ratings) / len(ratings))
             for brand, ratings in brand_ratings.items()
         ]
         report_data.sort(key=lambda x: x[1], reverse=True)
 
-        # Format table
+        # Форматируем средние в строки с одним знаком после запятой
+        formatted_data = [
+            (brand, f"{avg:.1f}")  # ← Вот ключ: превращаем в строку "4.0"
+            for brand, avg in report_data
+        ]
+
         headers = ["Brand", "Average Rating"]
-        return tabulate(report_data, headers=headers, tablefmt="simple")
+        return tabulate(formatted_data, headers=headers, tablefmt="simple",
+                        disable_numparse=True)
