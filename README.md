@@ -68,3 +68,19 @@ redmi note 12,xiaomi,199,4.6
 - Сортировка импортов: `isort .`
 - Запуск тестов: `pytest`
 - Проверка покрытия: `pytest --cov`
+
+## Пример работы
+
+Ниже показан пример запуска скрипта с реальными данными.
+
+### Команда:
+```bash
+python -m src.main --files examples/data.csv --report average-rating
+
+## Пример работы
+
+### Результат запуска тестов с покрытием
+
+![Тесты и покрытие кода](examples/screenshots/coverage_screenshot.png)
+
+
