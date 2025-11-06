@@ -20,18 +20,12 @@ class AverageRatingReport(BaseReport):
         for record in data:
             brand_ratings[record.brand].append(record.rating)
 
-        # Расчёт средних (как числа для сортировки)
-        report_data = [
-            (brand, sum(ratings) / len(ratings))
+        # Расчёт средних и форматирование в одну строку
+        formatted_data = [
+            (brand, f"{sum(ratings) / len(ratings):.1f}")
             for brand, ratings in brand_ratings.items()
         ]
-        report_data.sort(key=lambda x: x[1], reverse=True)
-
-        # Форматируем средние в строки с одним знаком после запятой
-        formatted_data = [
-            (brand, f"{avg:.1f}")  # ← Вот ключ: превращаем в строку "4.0"
-            for brand, avg in report_data
-        ]
+        formatted_data.sort(key=lambda x: float(x[1]), reverse=True)
 
         headers = ["Brand", "Average Rating"]
         return tabulate(formatted_data, headers=headers, tablefmt="simple",
